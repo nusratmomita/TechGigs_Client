@@ -16,7 +16,7 @@ const Register = () => {
         const photoURL = form.photoURL.value
         const password = form.password.value
 
-        // console.log(name,email,photoURL,password)
+        console.log(name,email,photoURL,password)
 
         if(!name || !email || !photoURL || !password){
             toast.error("You must fill in all the fields!");
@@ -36,22 +36,39 @@ const Register = () => {
         }
         
         createUser(email,password)
-        .then((result)=>{
+        .then((result) =>{
             const user = result.user;
             // console.log(user)
             updateUser({displayName:name , photoURL:photoURL})
             .then(()=>{
-                setUser({...user, displayName:name , photoURL:photoURL})
+                setUser({...user ,displayName:name , photoURL:photoURL})
+                toast.success("You have successfully created an account!")
+                setTimeout(()=>{
+                    navigate('/')
+                },1500)
             })
-            toast.success("You have successfully created an account!")
-            setTimeout(()=>{
-                navigate('/')
-            },1500)
             .catch(()=>{
                 toast.error("You have put invalid credentials")
                 setUser(user)
             })
+            // console.log(user)
         })
+        // .then((result)=>{
+        //     const user = result.user;
+        //     // console.log(user)
+        //     updateUser({displayName:name , photoURL:photoURL})
+        //     .then(()=>{
+        //         setUser({...user, displayName:name , photoURL:photoURL})
+        //     })
+        //     toast.success("You have successfully created an account!")
+        //     setTimeout(()=>{
+        //         navigate('/')
+        //     },1500)
+        //     .catch(()=>{
+        //         toast.error("You have put invalid credentials")
+        //         setUser(user)
+        //     })
+        // })
         .catch(()=>{
             toast.error("You have put invalid credentials.")
         })
@@ -88,16 +105,16 @@ const Register = () => {
                         <form onSubmit={handleRegistration} className="space-y-12 ">
                             <div className="space-y-4">
                                 <div>
-                                <label htmlFor="name" className="block mb-2 text-sm">Name</label>
-                                <input type="text" name="name" id="name" placeholder="Enter Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
+                                    <label htmlFor="name" className="block mb-2 text-sm">Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Enter Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
                                 </div>
                                 <div>
-                                <label htmlFor="email" className="block mb-2 text-sm">Enter Email</label>
-                                <input type="email" name="email" id="email" placeholder="Enter email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
+                                    <label htmlFor="email" className="block mb-2 text-sm">Enter Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
                                 </div>
                                 <div>
-                                <label htmlFor="photoURL" className="block mb-2 text-sm">Photo URL</label>
-                                <input type="text" name="photoURL" id="photoURL" placeholder="photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
+                                    <label htmlFor="photoURL" className="block mb-2 text-sm">Photo URL</label>
+                                    <input type="text" name="photoURL" id="photoURL" placeholder="photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
                                 </div>
                                 <div>
                                 <div className="flex justify-between mb-2">

@@ -4,10 +4,12 @@ import { NavLink } from "react-router";
 import './Header.css'
 import { authContext } from "../../Root/Root";
 import { toast } from "react-toastify";
+import { Tooltip } from 'react-tooltip'
 
 const Header = () => {
   const {user,handleLogout} = useContext(authContext);
-  console.log(user)
+  // console.log(user)
+
   const links = (
     <>
       <li><NavLink to='/'>Home</NavLink></li>
@@ -22,7 +24,6 @@ const Header = () => {
     .then(() => {
       toast.success("You've signed out successfully")
     }).catch(() => {
-      // An error happened.
     });
 
   }
@@ -38,17 +39,23 @@ const Header = () => {
             }
         </ul>
         {
-          user && user.email ? 
-          <div className="flex">
-            <button onClick={handleSignOut} className="cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3">Logout</button>
-            <img src={user.photoURL} alt="userImage"></img>
-          </div>
+          user && user?.email ? 
+          <div>
+              <button className="" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
+                <img className="w-20 h-20"src={user.photoURL} alt="" /></button>
+              <ul className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
+                <li className="text-2xl text-center font-black mb-5">Hi,{user.displayName}</li>
+                <li className="text-center"><button onClick={handleSignOut} className="flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3">Logout</button></li>
+              </ul>          
+          </div> 
            : 
           <div className="mt-5 text-xl font-bold flex gap-5">
             <NavLink to='/login'><button className="cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3">Login</button></NavLink>
             <NavLink to='/register'><button className="cursor-pointer bg-purple-900 text-white rounded-2xl p-3">Register</button></NavLink>
           </div>
         }
+        
     </div>
       
   );
