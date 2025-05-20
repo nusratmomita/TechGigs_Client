@@ -4,11 +4,11 @@ import { FiLinkedin } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
+    <footer className="mt-10 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
       <aside>
-        <img className="w-20 h-25 rounded-3xl bg-purple-500" src={siteLogo} alt="siteLogo" />
+        <img className="w-20 h-25 rounded-3xl" src={siteLogo} alt="siteLogo" />
         <p className="font-bold text-4xl">
-          Tech<span className="underline text-purple-700">Gigs</span>
+          Tech<span className="underline text-purple-900">Gigs</span>
           <br />
           [ Find Freelancer work from reputed companies easily ]
         </p>

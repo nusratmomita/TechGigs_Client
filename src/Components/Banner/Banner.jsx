@@ -5,7 +5,7 @@ import uiux from "../../assets/uiux.png"
 
 const Banner = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="m-20 rounded-3xl flex items-center justify-center h-screen bg-[#E9A5F1]">
         <div className=" carousel w-full max-w-7xl rounded-box">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className="m-20 flex gap-30 justify-center items-center">
