@@ -4,7 +4,7 @@ import { FiLinkedin } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="mt-10 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
+    <footer className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
       <aside>
         <img className="w-20 h-25 rounded-3xl" src={siteLogo} alt="siteLogo" />
         <p className="font-bold text-4xl">
