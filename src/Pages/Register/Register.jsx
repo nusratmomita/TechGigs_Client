@@ -6,7 +6,7 @@ import { authContext } from "../../Root/Root";
 const Register = () => {
 
     const navigate = useNavigate();
-    const {createUser,handleGoogleSignIn} = useContext(authContext)
+    const {createUser,handleGoogleSignIn,updateUser,setUser} = useContext(authContext)
 
     const handleRegistration = (e) => {
         e.preventDefault();
@@ -38,11 +38,19 @@ const Register = () => {
         createUser(email,password)
         .then((result)=>{
             const user = result.user;
-            console.log(user)
+            // console.log(user)
+            updateUser({displayName:name , photoURL:photoURL})
+            .then(()=>{
+                setUser({...user, displayName:name , photoURL:photoURL})
+            })
             toast.success("You have successfully created an account!")
             setTimeout(()=>{
                 navigate('/')
             },1500)
+            .catch(()=>{
+                toast.error("You have put invalid credentials")
+                setUser(user)
+            })
         })
         .catch(()=>{
             toast.error("You have put invalid credentials.")

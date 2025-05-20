@@ -25,6 +25,7 @@ const Login = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             console.log(user)
+            toast.success("You have successfully logged in!")
             setTimeout(()=>{
                 navigate('/')
             },1500)

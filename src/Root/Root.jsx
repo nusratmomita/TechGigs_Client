@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 import { auth } from '../Firebase/firebase.config';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 export const authContext = createContext();
 
@@ -11,7 +11,7 @@ const Root = () => {
 
     const provider = new GoogleAuthProvider()
         
-    const [users , setUsers] = useState(null);
+    const [user , setUser] = useState(null);
     const [loading , setLoading] = useState(true)
 
 
@@ -30,9 +30,20 @@ const Root = () => {
         return signInWithEmailAndPassword(auth,email,password);
     }
 
+    // update user
+    const updateUser = (updatedData) => {
+        return updateProfile(auth.currentUser , updatedData)
+    }
+
+    // handle logout
+    const handleLogout = () => {
+        return signOut(auth)
+    }
+
+
     useEffect(()=> {
         const unsubscribe = onAuthStateChanged(auth , (currentUser)=>{
-            setUsers(currentUser)
+            setUser(currentUser)
             setLoading(false);
         })
 
@@ -45,8 +56,10 @@ const Root = () => {
         createUser,
         handleGoogleSignIn,
         handleLogin,
-        setUsers,
-        users,
+        updateUser,
+        handleLogout,
+        setUser,
+        user,
         setLoading,
         loading
     }
