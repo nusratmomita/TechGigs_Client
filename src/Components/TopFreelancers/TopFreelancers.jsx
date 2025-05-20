@@ -55,7 +55,7 @@ const TopFreelancers = () => {
                 <h2 className="card-title text-2xl">Digital Marketer</h2>
                 <h1 className="text-2xl font-bold font-mono">Mr.David Howling</h1>
                 <p className="text-xl">
-                    Got hired by Picker's Pick Company , suited in London with highest package. Have 10+ years of experiance.
+                    Got hired by Picker's Pick Company , suited in London with highest package. Have 10+ years of experience.
                 </p>
                 <button className="text-xl  rounded-3xl btn bg-green-100 border-2 border-green-800 text-green-700">Not Verified</button>
             </div>
