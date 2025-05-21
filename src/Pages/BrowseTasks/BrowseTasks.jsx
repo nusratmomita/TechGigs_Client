@@ -29,7 +29,7 @@ const BrowseTasks = () => {
                                 </h1>
                                 <div className="divider divider-neutral"></div>
                                 <div className="flex justify-center mt-4">
-                                <NavLink to={task._id}>
+                                <NavLink to={`/detailedTask/${task._id}`}>
                                     <button className="cursor-pointer bg-indigo-200 text-indigo-900 font-semibold text-lg py-2 px-5 rounded-xl shadow hover:bg-indigo-300 transition-all duration-300">
                                         📝 See Details
                                     </button>
