@@ -23,13 +23,14 @@ const Header = () => {
     handleLogout()
     .then(() => {
       toast.success("You've signed out successfully")
-    }).catch(() => {
+    })
+    .catch(() => {
     });
 
   }
   return (
-    <div className="navbar bg-base-100 shadow-sm flex gap-70 text-center">
-        <div  className="flex">
+    <div className="navbar bg-base-100 shadow-lg flex gap-10 lg:gap-70 text-center">
+        <div className="hidden lg:flex">
             <img className="w-35 h-25" src={siteLogo} alt="siteLogo" />
             <h1 className="mt-10 -ml-5 text-4xl font-bold">Tech<span className="underline text-purple-700">Gigs</span></h1>
         </div>

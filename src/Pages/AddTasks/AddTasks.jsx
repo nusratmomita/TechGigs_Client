@@ -3,6 +3,7 @@ import { authContext } from "../../Root/Root";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast, ToastContainer } from 'react-toastify';
+import { Link } from 'react-router';
 
 const AddTasks = () => {
 
@@ -13,9 +14,17 @@ const AddTasks = () => {
     const handleAddTask = (e) => {
         e.preventDefault();
         const form = e.target;
+        const email = user.email;
         const formData = new FormData(form);
-        const addTaskData = Object.fromEntries(formData.entries())
+
+        const {...restFormData} = Object.fromEntries(formData.entries())
         // console.log(addTaskData);
+
+        const addTaskData = {
+            email,
+            ...restFormData
+        }
+        // console.log(addTaskData)
 
         fetch('http://localhost:3000/tasks',{
             method: "POST",
@@ -26,8 +35,10 @@ const AddTasks = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log("Data added",data)
-            toast.success("New Task added successfully!")
+            // console.log("Data added",data)
+            if(data.insertedId){
+                toast.success("New Task added successfully!")
+            }
         })
 
     }
@@ -76,12 +87,16 @@ const AddTasks = () => {
                         </fieldset>
                         <fieldset className="raleway-font fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
                             <label className="label text-xl text-[#1B1A1A] font-bold">User Name</label>
-                            <input type="text" name="user_name" className="input w-full text-xl" placeholder={user.displayName} disabled={true}/>
+                            <input type="text" name="name" className="input w-full text-xl" placeholder={user.displayName} disabled={true}/>
                         </fieldset>
                         <fieldset className="raleway-font fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
                             <label className="label  text-xl text-[#1B1A1A] font-bold">User Email</label>
                             <input type="text" name="email" className="input text-[#1B1A1A] w-full text-xl" placeholder={user.email} disabled={true}/>
                         </fieldset>
+                        <div className='bg-base-300 border-2 border-blue-600 text-center text-xl font-extrabold'>
+                            <h1 className='mt-5'>Total Bids For this task : 0</h1>
+                            <Link to='/myTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to your posted task page and change it</h2></Link>
+                        </div>
                     </div>
             
                     <button type="submit" className="mt-10 rounded-2xl btn w-1/6 text-black text-2xl bg-[#8F87F1] border-2 border-purple-800" value="">Add Task</button>
