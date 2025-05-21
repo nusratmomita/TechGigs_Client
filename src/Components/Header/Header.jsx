@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 import './Header.css'
 import { authContext } from "../../Root/Root";
 import { toast } from "react-toastify";
-import { Tooltip } from 'react-tooltip'
+
 
 const Header = () => {
   const {user,handleLogout} = useContext(authContext);
