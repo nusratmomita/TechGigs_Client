@@ -5,9 +5,17 @@ const TaskDetails = () => {
     const taskData = useLoaderData();
     // console.log(taskData)
 
-    const currentDate = new Date();
+    // const date = new Date();
 
-    console.log(currentDate.getMonth(),parseInt(taskData.task_deadline[1]))
+    // const currentMonth = date.getMonth();
+    // const currentYear = date.getFullYear().length;
+
+    // const deadlineMonth = parseInt(taskData.task_deadline[1])
+    // const deadlineYearFirst = parseInt(taskData.task_deadline[taskData.task_deadline.length-2]);
+    // const deadlineYearSecond = parseInt(taskData.task_deadline[taskData.task_deadline.length-1]);
+
+    // console.log(currentMonth , currentYear , deadlineMonth , deadlineYearFirst,deadlineYearSecond)
+
     return (
         <div className='flex justify-center items-center mt-30 '>
             <div className="card  bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 rounded-3xl shadow-md hover:shadow-2xl transition-transform transform hover:scale-90">
@@ -26,7 +34,9 @@ const TaskDetails = () => {
 
                             }
                         
-                        <p className="text-2xl font-semibold">💂‍♂️ <span className="underline">Owner : {taskData.email}</span> </p>
+                        <p className="text-2xl font-semibold">🚨  Owner Name : {taskData.name} </p>
+                        <p className="text-2xl font-semibold">💂‍♂️ <span className="">Owner Email : {taskData.email}</span> </p>
+
                     </div>
                     <div className="divider divider-neutral"></div>
                 </div>

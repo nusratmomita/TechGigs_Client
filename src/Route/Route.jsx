@@ -8,6 +8,8 @@ import BrowseTasks from "../Pages/BrowseTasks/BrowseTasks";
 import MyTasks from "../Pages/MyTasks/MyTasks";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import IndividualErrorPage from "../Pages/IndividualErrorPage/IndividualErrorPage";
 
 
 export const router = createBrowserRouter([
@@ -34,10 +36,15 @@ export const router = createBrowserRouter([
             {
                 path: "/detailedTask/:id",
                 loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
-                Component: TaskDetails
+                element: <PrivateRoute>
+                            <TaskDetails></TaskDetails>
+                        </PrivateRoute>,
+                // errorElement: <IndividualErrorPage></IndividualErrorPage>
             },
             {
                 path: "/myTasks",
+                // path: "/myTasks/:email",
+                loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.email}`),
                 element: <PrivateRoute>
                             <MyTasks></MyTasks>
                         </PrivateRoute>
@@ -50,6 +57,10 @@ export const router = createBrowserRouter([
                 path: "/register",
                 Component: Register
             },
+            {
+                path: "*",
+                Component: ErrorPage
+            }
         ]
     }
 ])

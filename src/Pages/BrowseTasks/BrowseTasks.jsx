@@ -14,7 +14,7 @@ const BrowseTasks = () => {
                 {
                     totalTasks.map((task)=> 
                         <div key={task._id}
-                            className="card w-[400px] h-[400px] bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 rounded-3xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
+                            className="card  h-[450px] bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 rounded-3xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
                             <div className="card-body text-gray-800 px-6 py-5">
                                 <h2 className="text-center text-4xl font-bold flex justify-center items-center gap-2">
                                 {task.task_title}

@@ -8,13 +8,14 @@ import { Link } from 'react-router';
 const AddTasks = () => {
 
     const {user} = useContext(authContext);
-
+    console.log(user)
     const [startDate , setStartDate] = useState(new Date())
 
     const handleAddTask = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = user.email;
+        const name = user.displayName;
         const formData = new FormData(form);
 
         const {...restFormData} = Object.fromEntries(formData.entries())
@@ -22,6 +23,7 @@ const AddTasks = () => {
 
         const addTaskData = {
             email,
+            name,
             ...restFormData
         }
         // console.log(addTaskData)
