@@ -9,13 +9,18 @@ import defaultUserImg from "../../assets/user.png";
 const Header = () => {
   const {user,handleLogout} = useContext(authContext);
   // console.log(user.displayName)
+  // console.log(user.email)
+  // console.log(user.email)
 
   const links = (
     <>
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/addTasks'>Add Tasks</NavLink></li>
       <li><NavLink to='/browseTasks'>Browse Tasks</NavLink></li>
-      <li><NavLink to='/myTasks'>My Posted Tasks</NavLink></li>
+      {/* <li><NavLink to={`/myTasks/specific/${user.email}`}>My Posted Tasks</NavLink></li> */}
+      {user?.email && 
+        <li><NavLink to={`/myTasks/specific/${user.email}`}>My Posted Tasks</NavLink></li>
+      }
     </>
   );
 

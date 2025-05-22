@@ -3,18 +3,6 @@ import { useLoaderData } from 'react-router';
 
 const TaskDetails = () => {
     const taskData = useLoaderData();
-    // console.log(taskData)
-
-    // const date = new Date();
-
-    // const currentMonth = date.getMonth();
-    // const currentYear = date.getFullYear().length;
-
-    // const deadlineMonth = parseInt(taskData.task_deadline[1])
-    // const deadlineYearFirst = parseInt(taskData.task_deadline[taskData.task_deadline.length-2]);
-    // const deadlineYearSecond = parseInt(taskData.task_deadline[taskData.task_deadline.length-1]);
-
-    // console.log(currentMonth , currentYear , deadlineMonth , deadlineYearFirst,deadlineYearSecond)
 
     return (
         <div className='flex justify-center items-center mt-30 '>

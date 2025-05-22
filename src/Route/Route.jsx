@@ -36,18 +36,17 @@ export const router = createBrowserRouter([
             {
                 path: "/detailedTask/:id",
                 loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
-                element: <PrivateRoute>
+                element:<PrivateRoute>
                             <TaskDetails></TaskDetails>
                         </PrivateRoute>,
                 // errorElement: <IndividualErrorPage></IndividualErrorPage>
             },
             {
-                path: "/myTasks",
-                // path: "/myTasks/:email",
-                loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.email}`),
-                element: <PrivateRoute>
-                            <MyTasks></MyTasks>
-                        </PrivateRoute>
+                path: "/myTasks/specific/:email",
+                loader: ({params}) => fetch(`http://localhost:3000/tasks/specific/${params.email}`),
+                // element:<PrivateRoute>
+                element:            <MyTasks></MyTasks>
+                        // </PrivateRoute>
             },
             {
                 path: "/login",
@@ -64,3 +63,4 @@ export const router = createBrowserRouter([
         ]
     }
 ])
+

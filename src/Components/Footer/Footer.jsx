@@ -16,6 +16,12 @@ const Footer = () => {
       <div className="flex gap-10">
         <div>
             <h1 className="-mt-8 text-2xl font-bold">Terms & Conditions</h1>
+            <ul>
+              <li>Market Laws</li>
+              <li>International Laws</li>
+              <li>Labour Laws</li>
+              <li>Freelancing Laws</li>
+            </ul>
         </div>
         <div>
             <h1 className="text-2xl font-bold">Contact Details</h1>

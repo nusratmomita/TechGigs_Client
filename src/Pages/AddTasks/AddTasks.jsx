@@ -41,6 +41,7 @@ const AddTasks = () => {
             if(data.insertedId){
                 toast.success("New Task added successfully!")
             }
+            form.reset()
         })
 
     }
@@ -95,8 +96,8 @@ const AddTasks = () => {
                             <label className="label  text-xl text-[#1B1A1A] font-bold">User Email</label>
                             <input type="text" name="email" className="input text-[#1B1A1A] w-full text-xl" placeholder={user.email} disabled={true}/>
                         </fieldset>
-                        <div className='bg-base-300 border-2 border-blue-600 text-center text-xl font-extrabold'>
-                            <h1 className='mt-5'>Total Bids For this task : 0</h1>
+                        <div className='bg-base-300 border-2 border-blue-600 text-center text-xl font-extrabold rounded-3xl'>
+                            <h1 className='mt-5'>Total Bids For this task : <span className='text-2xl font-extrabold'>0</span></h1>
                             <Link to='/myTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to your posted task page and change it</h2></Link>
                         </div>
                     </div>
