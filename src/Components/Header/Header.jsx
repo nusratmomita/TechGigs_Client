@@ -17,10 +17,11 @@ const Header = () => {
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/addTasks'>Add Tasks</NavLink></li>
       <li><NavLink to='/browseTasks'>Browse Tasks</NavLink></li>
-      {/* <li><NavLink to={`/myTasks/specific/${user.email}`}>My Posted Tasks</NavLink></li> */}
-      {user?.email && 
-        <li><NavLink to={`/myTasks/specific/${user.email}`}>My Posted Tasks</NavLink></li>
-      }
+      <li>
+        <NavLink to={user ? `/myTasks/specific/${user.email}` : ""}>
+          My Posted Tasks
+        </NavLink>
+      </li>
     </>
   );
 
