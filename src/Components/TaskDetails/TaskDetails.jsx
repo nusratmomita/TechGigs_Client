@@ -39,7 +39,7 @@ const TaskDetails = () => {
                                 <p className="text-2xl font-semibold flex items-start gap-2 border-2 border-green-700 bg-green-200 w-1/2 p-2 rounded-2xl">💸 Budget : {taskData.budget}</p> 
                             }
                         
-                        <button onClick={()=>handleBidCount(taskData._id)} className='text-2xl font-semibold flex items-start gap-2 border-2 border-purple-700 bg-purple-200 w-1/2 p-2 rounded-2xl'>
+                        <button onClick={()=>handleBidCount(taskData._id)} className='cursor:pointer text-2xl font-semibold flex items-start gap-2 border-2 border-purple-700 bg-purple-200 w-1/2 p-2 rounded-2xl'>
                             Click To increase the Bid Count : {bidCount}
                         </button>                            
                             <p className="text-2xl font-semibold">🚨  Owner Name : {taskData.name} </p>

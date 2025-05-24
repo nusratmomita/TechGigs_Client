@@ -9,7 +9,6 @@ import MyTasks from "../Pages/MyTasks/MyTasks";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import IndividualErrorPage from "../Pages/IndividualErrorPage/IndividualErrorPage";
 import UpdateTasks from "../Pages/UpdateTasks/UpdateTasks";
 
 
@@ -41,7 +40,6 @@ export const router = createBrowserRouter([
                 element:<PrivateRoute>
                             <TaskDetails></TaskDetails>
                         </PrivateRoute>,
-                // errorElement: <IndividualErrorPage></IndividualErrorPage>
             },
             {
                 path: "/myTasks/specific/:email",

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, useLoaderData } from 'react-router';
 import { MdWorkHistory } from "react-icons/md";
 
+
 const BrowseTasks = () => {
     const totalTasks = useLoaderData();
    
