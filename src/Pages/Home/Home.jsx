@@ -14,7 +14,7 @@ const Home = () => {
     const data = useLoaderData();
     // console.log(data)
 
-    const [theme , setTheme] = useState('dark')
+    const [theme , setTheme] = useState('light')
 
     const toggleTheme = () => {
         setTheme((cur) => cur==="light" ? "dark" : "light")

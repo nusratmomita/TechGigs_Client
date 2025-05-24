@@ -95,7 +95,7 @@ const Header = ({toggleTheme, theme}) => {
                     <img className="w-20 h-20" src={defaultUserImg} alt="userImg" />
                   }
                   </button>
-                <ul className="dropdown menu h-40 w-25 lg:w-35 rounded-box bg-base-100 shadow-sm"
+                <ul className="dropdown menu  rounded-box bg-base-100 shadow-sm"
                   popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
                   <li className="text-2xl text-center font-black mb-5">Hi, {user?.displayName ? user?.displayName : "User"} </li>
                   <li className="text-center"><button onClick={handleSignOut} className="flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3">Logout</button></li>
