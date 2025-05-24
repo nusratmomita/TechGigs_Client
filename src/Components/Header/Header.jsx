@@ -20,7 +20,7 @@ const Header = ({toggleTheme, theme}) => {
       <li><NavLink to='/addTasks'>Add Tasks</NavLink></li>
       <li><NavLink to='/browseTasks'>Browse Tasks</NavLink></li>
       <li>
-        <NavLink to={user ? `/myTasks/specific/${user.email}` : ""}>
+        <NavLink to={user ? `/myTasks/specific/${user.email}` : "/login"}>
           My Posted Tasks
         </NavLink>
       </li>

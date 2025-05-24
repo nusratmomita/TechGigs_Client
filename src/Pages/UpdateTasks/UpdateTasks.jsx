@@ -33,7 +33,7 @@ const UpdateTasks = () => {
         }
         // console.log(updatedTasks)
 
-        fetch(`http://localhost:3000/tasks/${task._id}`,{
+        fetch(`https://tech-gigs-server.vercel.app/tasks/${task._id}`,{
             method: "PUT",
             headers: {
                 'content-type': "application/json"
