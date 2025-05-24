@@ -42,7 +42,7 @@ const UpdateTasks = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log("Data added",data)
+            // console.log("Data added",data)
             if(data.modifiedCount){
                 toast.success("Your Task has been successfully updated!")
             }

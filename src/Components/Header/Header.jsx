@@ -47,7 +47,7 @@ const Header = ({toggleTheme, theme}) => {
                 links
             }
         </ul>
-        <div className="lg:-ml-15 flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex gap-4 flex-col lg:flex-row justify-center items-center">
           <ReactSwitch
             onChange={toggleTheme}
             checked={theme === "dark"}
@@ -102,7 +102,7 @@ const Header = ({toggleTheme, theme}) => {
                 </ul>          
             </div> 
             : 
-            <div className="mt-5 text-xl font-bold flex gap-5">
+            <div className="mt-5 text-xl font-bold flex flex-col lg:flex-row gap-5">
               <NavLink to='/login'><button className="cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3">Login</button></NavLink>
               <NavLink to='/register'><button className="cursor-pointer bg-purple-900 text-white rounded-2xl p-3">Register</button></NavLink>
             </div>

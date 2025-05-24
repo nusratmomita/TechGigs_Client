@@ -1,11 +1,21 @@
 import React from 'react';
-import { NavLink, useLoaderData } from 'react-router';
+import { NavLink, useLoaderData, useNavigation } from 'react-router';
 import { MdWorkHistory } from "react-icons/md";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 
 const BrowseTasks = () => {
     const totalTasks = useLoaderData();
+
+    const navigation = useNavigation();
+
+    if(navigation.state === "loading"){
+        return (
+        <div className="flex justify-center items-center h-screen">
+            <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+        </div>
+        );
+    }
    
     return (
         <>
