@@ -48,6 +48,28 @@ const Header = ({toggleTheme, theme}) => {
             }
         </ul>
         <div className="flex gap-4 flex-col lg:flex-row justify-center items-center">
+                
+          {
+            user && user?.email ? 
+            <div>
+                <button className="" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
+                  {
+                    user?.photoURL ? <img className="w-20 h-20"src={user.photoURL} alt="userImg" /> :
+                    <img className="w-20 h-20" src={defaultUserImg} alt="userImg" />
+                  }
+                  </button>
+                <ul className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                  popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
+                  <li className="text-2xl text-center font-black mb-5">Hi, {user?.displayName ? user?.displayName : "User"} </li>
+                  <li className="text-center"><button onClick={handleSignOut} className="flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3">Logout</button></li>
+                </ul>          
+            </div> 
+            : 
+            <div className="mt-5 text-xl font-bold flex flex-col lg:flex-row gap-5">
+              <NavLink to='/login'><button className="cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3">Login</button></NavLink>
+              <NavLink to='/register'><button className="cursor-pointer bg-purple-900 text-white rounded-2xl p-3">Register</button></NavLink>
+            </div>
+          }
           <ReactSwitch
             onChange={toggleTheme}
             checked={theme === "dark"}
@@ -85,28 +107,7 @@ const Header = ({toggleTheme, theme}) => {
             height={40}
             width={90}
             className="react-switch"
-            />        
-          {
-            user && user?.email ? 
-            <div>
-                <button className="" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
-                  {
-                    user?.photoURL ? <img className="w-20 h-20"src={user.photoURL} alt="userImg" /> :
-                    <img className="w-20 h-20" src={defaultUserImg} alt="userImg" />
-                  }
-                  </button>
-                <ul className="dropdown menu  rounded-box bg-base-100 shadow-sm"
-                  popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
-                  <li className="text-2xl text-center font-black mb-5">Hi, {user?.displayName ? user?.displayName : "User"} </li>
-                  <li className="text-center"><button onClick={handleSignOut} className="flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3">Logout</button></li>
-                </ul>          
-            </div> 
-            : 
-            <div className="mt-5 text-xl font-bold flex flex-col lg:flex-row gap-5">
-              <NavLink to='/login'><button className="cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3">Login</button></NavLink>
-              <NavLink to='/register'><button className="cursor-pointer bg-purple-900 text-white rounded-2xl p-3">Register</button></NavLink>
-            </div>
-          }
+            />  
         </div>
     </div>
       
