@@ -8,46 +8,45 @@ import { Link } from 'react-router';
 
 const UpdateTasks = () => {
     const task = useLoaderData();
-    console.log(task);
+    // console.log(task);
 
-     const {user} = useContext(authContext);
-        console.log(user)
-        const [startDate , setStartDate] = useState(new Date())
-    
-        const handleAddTask = (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const email = user.email;
-            const name = user.displayName;
-            const formData = new FormData(form);
-    
-            const {...restFormData} = Object.fromEntries(formData.entries())
-            // console.log(addTaskData);
-    
-            const addTaskData = {
-                email,
-                name,
-                ...restFormData
-            }
-            // console.log(addTaskData)
-    
-            fetch(`http://localhost:3000/tasks/${task.id}`,{
-                method: "PUT",
-                headers: {
-                    'content-type': "application/json"
-                },
-                body: JSON.stringify(addTaskData)
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                // console.log("Data added",data)
-                if(data.insertedId){
-                    toast.success("New Task added successfully!")
-                }
-                form.reset()
-            })
-    
+    const {user} = useContext(authContext);
+    // console.log(user)
+    const [startDate , setStartDate] = useState(new Date())
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = user.email;
+        const name = user.displayName;
+
+        const formData = new FormData(form);
+
+        const {...restFormData} = Object.fromEntries(formData.entries())
+        
+        const updatedTasks = {
+            email,
+            name,
+            ...restFormData
         }
+        // console.log(updatedTasks)
+
+        fetch(`http://localhost:3000/tasks/${task._id}`,{
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(updatedTasks)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log("Data added",data)
+            if(data.modifiedCount){
+                toast.success("Your Task has been successfully updated!")
+            }
+            // form.reset()
+        })
+    }
     
     return (
         <>
@@ -55,7 +54,7 @@ const UpdateTasks = () => {
             <div className="p-24">
             <div className="bg-purple-300 rounded-3xl p-12 text-center space-y-5">
                 <h1 className="text-5xl text-black">Update Task</h1>
-                <form onSubmit={handleAddTask}>
+                <form onSubmit={handleUpdate}>
                     <div className="mt-15 grid grid-cols-1 md:grid-cols-2 gap-5">
                         <fieldset className="raleway-font fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
                             <label className="label text-xl text-[#1B1A1A] font-bold">Task Title</label>
@@ -102,10 +101,9 @@ const UpdateTasks = () => {
                         </fieldset>
                         <div className='bg-base-300 border-2 border-blue-600 text-center text-xl font-extrabold rounded-3xl'>
                             <h1 className='mt-5'>Total Bids For this task : <span className='text-2xl font-extrabold'>0</span></h1>
-                            <Link to='/myTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to your posted task page and change it</h2></Link>
+                            <Link to='/browseTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to browse task, click on See details button and change it</h2></Link>
                         </div>
                     </div>
-            
                     <button type="submit" className="mt-10 rounded-2xl btn lg:w-1/6 text-black text-2xl bg-[#8F87F1] border-2 border-purple-800" value="">Update Task</button>
                 </form>
             </div>

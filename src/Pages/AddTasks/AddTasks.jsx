@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 const AddTasks = () => {
 
     const {user} = useContext(authContext);
-    console.log(user)
+    // console.log(user)
     const [startDate , setStartDate] = useState(new Date())
 
     const handleAddTask = (e) => {
@@ -98,7 +98,7 @@ const AddTasks = () => {
                         </fieldset>
                         <div className='bg-base-300 border-2 border-blue-600 text-center text-xl font-extrabold rounded-3xl'>
                             <h1 className='mt-5'>Total Bids For this task : <span className='text-2xl font-extrabold'>0</span></h1>
-                            <Link to='/myTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to your posted task page and change it</h2></Link>
+                           <Link to='/browseTasks'><h2 className='tooltip' data-tip="Click here to visit page">To increment it please go to browse task, click on See details button and change it</h2></Link>
                         </div>
                     </div>
             
