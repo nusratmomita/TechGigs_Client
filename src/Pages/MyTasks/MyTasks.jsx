@@ -22,7 +22,7 @@ const MyTasks = () => {
         confirmButtonText: "Yes, delete it!"
         }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:3000/tasks/${id}` , {
+            fetch(`https://tech-gigs-server.vercel.app/tasks/${id}` , {
                 method: "DELETE",
             })
             .then(res=>res.json())
@@ -38,7 +38,6 @@ const MyTasks = () => {
                 setTasks(remainingTasks)
                 }
             })
-           
         }
         });
 
@@ -72,7 +71,7 @@ const MyTasks = () => {
                                         <td className="flex gap-5 m-5">
                                             <NavLink to={`/update/${task._id}`}><button className="cursor-pointer flex gap-1 justify-center items-center border-2 border-green-600 bg-green-200 hover:bg-green-600 text-green-800 hover:text-white py-1 px-3 rounded-md"><FiEdit></FiEdit> Update</button></NavLink>
                                             <button onClick={() => handleDeleteTask(task._id)} className="cursor-pointer flex gap-1 justify-center items-center border-2 border-red-600 bg-red-200 hover:bg-red-600 text-red-800 hover:text-white py-1 px-3 rounded-md"><RiDeleteBin5Line></RiDeleteBin5Line> Delete</button>
-                                            <button className="cursor-pointer flex gap-1 justify-center items-center border-2 border-purple-600 bg-purple-200 hover:bg-purple-600 text-purple-800 hover:text-white py-1 px-3 rounded-md"><FaArrowUpRightFromSquare></FaArrowUpRightFromSquare> Bid(X)</button>
+                                            <button className="cursor-pointer flex gap-1 justify-center items-center border-2 border-purple-600 bg-purple-200 hover:bg-purple-600 text-purple-800 hover:text-white py-1 px-3 rounded-md"><FaArrowUpRightFromSquare></FaArrowUpRightFromSquare> Bid({task.total_bids})</button>
                                         </td>
                                     </tr>
                                 ))

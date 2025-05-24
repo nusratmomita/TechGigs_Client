@@ -12,39 +12,46 @@ const AddTasks = () => {
     const [startDate , setStartDate] = useState(new Date())
 
     const handleAddTask = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const email = user.email;
-        const name = user.displayName;
-        const formData = new FormData(form);
+    e.preventDefault();
 
-        const {...restFormData} = Object.fromEntries(formData.entries())
-        // console.log(addTaskData);
+    const form = e.target;
+    const email = user.email;
+    const name = user.displayName;
+    const task_title = form.task_title.value;
+    const category = form.category.value;
+    const task_description = form.task_description.value;
+    const budget = form.budget.value;
 
-        const addTaskData = {
-            email,
-            name,
-            ...restFormData
+    const addTaskData = {
+        email,
+        name,
+        task_title,
+        category,
+        task_description,
+        budget,
+        task_deadline: startDate,
+        total_bids: 0
+    };
+
+    // console.log(addTaskData)
+
+
+    fetch('https://tech-gigs-server.vercel.app/tasks', {
+        method: "POST",
+        headers: {
+            'content-type': "application/json"
+        },
+        body: JSON.stringify(addTaskData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.insertedId) {
+            toast.success("New Task added successfully!");
         }
-        console.log(addTaskData)
-
-        fetch('http://localhost:3000/tasks',{
-            method: "POST",
-            headers: {
-                'content-type': "application/json"
-            },
-            body: JSON.stringify(addTaskData)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            // console.log("Data added",data)
-            if(data.insertedId){
-                toast.success("New Task added successfully!")
-            }
-            form.reset()
-        })
-
-    }
+        form.reset();
+        setStartDate(new Date()); 
+    });
+    };
 
     return (
         <>

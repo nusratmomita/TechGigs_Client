@@ -21,6 +21,7 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 path: "/",
+                loader: () => fetch('https://tech-gigs-server.vercel.app/tasks'),
                 Component: Home
             },
             {
@@ -31,12 +32,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/browseTasks",
-                loader: () => fetch('http://localhost:3000/tasks'),
+                loader: () => fetch('https://tech-gigs-server.vercel.app/tasks/allTasks'),
                 Component: BrowseTasks
             },
             {
                 path: "/detailedTask/:id",
-                loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
+                loader: ({params}) => fetch(`https://tech-gigs-server.vercel.app/tasks/${params.id}`),
                 element:<PrivateRoute>
                             <TaskDetails></TaskDetails>
                         </PrivateRoute>,
@@ -44,14 +45,14 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/myTasks/specific/:email",
-                loader: ({params}) => fetch(`http://localhost:3000/tasks/specific/${params.email}`),
+                loader: ({params}) => fetch(`https://tech-gigs-server.vercel.app/tasks/specific/${params.email}`),
                 element:<PrivateRoute>
                             <MyTasks></MyTasks>
                         </PrivateRoute>
             },
             {
                 path:'/update/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
+                loader: ({params}) => fetch(`https://tech-gigs-server.vercel.app/tasks/${params.id}`),
                 element: <PrivateRoute>
                             <UpdateTasks></UpdateTasks>
                         </PrivateRoute>
