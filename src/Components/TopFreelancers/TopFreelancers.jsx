@@ -4,12 +4,12 @@ import interiorDesigner from '../../assets/interiorDesigner.png'
 
 const TopFreelancers = () => {
   return (
-    <div className="mt-40 ">
+    <div className="mt-40">
       <h1 className="text-7xl text-center font-extrabold text-blue-400">
        | Meet Our Top 3 Freelancers of This Week |
       </h1>
-      <div className="flex gap-10 justify-center items-center mt-10">
-        <div className="card bg-base-100 w-100 shadow-sm">
+      <div className="flex flex-col lg:flex-row gap-10 justify-center items-center mt-10">
+        <div id="topFreelancers" className="card bg-base-100 w-100 shadow-sm">
             <figure className="px-10 pt-10">
             <img
                 src={interiorDesigner}
@@ -26,7 +26,7 @@ const TopFreelancers = () => {
                 <button className="text-xl w-1/3 rounded-3xl btn bg-green-100 border-2 border-green-800 text-green-700"><GoVerified size={30} color='green'></GoVerified>Verified</button>
             </div>
       </div>
-      <div className="card bg-base-100 w-100 shadow-sm">
+      <div id="topFreelancers" className="card bg-base-100 w-100 shadow-sm">
             <figure className="px-10 pt-10">
             <img
                 src="https://i.ibb.co/KjZBg0Kg/c7109d15fa91f781969931fa45e74bf9.jpg"
@@ -43,7 +43,7 @@ const TopFreelancers = () => {
                 <button className="text-xl w-1/3 rounded-3xl btn bg-green-100 border-2 border-green-800 text-green-700"><GoVerified size={30} color='green'></GoVerified>Verified</button>
             </div>
       </div>
-      <div className="card bg-base-100 w-100 shadow-sm">
+      <div id="topFreelancers" className="topFreelancers card bg-base-100 w-100 shadow-sm">
             <figure className="px-10 pt-10">
             <img
                 src="https://i.ibb.co/9krFwCsk/0d309bbc802545f9ef289357a3179b89.jpg"

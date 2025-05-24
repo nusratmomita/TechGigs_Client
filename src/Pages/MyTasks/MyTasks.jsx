@@ -4,7 +4,8 @@ import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Swal from "sweetalert2";
-
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const MyTasks = () => {  
     const myPostedTasks = useLoaderData();
@@ -45,7 +46,8 @@ const MyTasks = () => {
 
     return (
         <>
-            <h1 className="mt-25 flex justify-center items-center text-4xl font-bold text-purple-500 hover:text-purple-900">All the tasks created by YOU are shown here...</h1>
+            <Header></Header>
+            <h1 className="mt-25 p-5 flex justify-center items-center text-4xl font-bold text-purple-500 hover:text-purple-900">All the tasks created by YOU are shown here...</h1>
             {
                 <div className="overflow-x-auto">
                     <div className="flex justify-center items-center min-h-screen p-16">
@@ -82,6 +84,7 @@ const MyTasks = () => {
                     </div>
                 </div>
             }
+            <Footer></Footer>
         </>    
     );
 };

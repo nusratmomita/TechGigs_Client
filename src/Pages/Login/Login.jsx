@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { NavLink, useLocation, useNavigate } from "react-router";
 import { authContext } from '../../Root/Root';
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const Login = () => {
     const {handleLogin , handleGoogleSignIn} = useContext(authContext);
@@ -53,6 +55,7 @@ const Login = () => {
     return (
        <>
         <ToastContainer></ToastContainer>
+        <Header></Header>
         <div className="hero  min-h-screen">
             <div className="hero-content w-full rounded-3xl mt-20 p-25  flex-col justify-evenly lg:flex-row">
                 <div className="border-2 border-blue-600 p-2 rounded-2xl w-full max-w-lg shrink-0 shadow-2xl">
@@ -97,6 +100,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </>
     );
 };

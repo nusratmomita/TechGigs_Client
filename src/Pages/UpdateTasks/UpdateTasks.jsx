@@ -5,6 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router';
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const UpdateTasks = () => {
     const task = useLoaderData();
@@ -50,7 +52,8 @@ const UpdateTasks = () => {
     
     return (
         <>
-            <ToastContainer></ToastContainer>        
+            <ToastContainer></ToastContainer>  
+            <Header></Header>      
             <div className="p-24">
             <div className="bg-purple-300 rounded-3xl p-12 text-center space-y-5">
                 <h1 className="text-5xl text-black">Update Task</h1>
@@ -108,6 +111,7 @@ const UpdateTasks = () => {
                 </form>
             </div>
             </div>
+            <Footer></Footer>
         </>
     );
 };

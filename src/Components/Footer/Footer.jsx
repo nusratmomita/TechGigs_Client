@@ -4,7 +4,7 @@ import { FiLinkedin } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
+    <footer id="footer" className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
       <aside>
         <img className="w-20 h-25 rounded-3xl" src={siteLogo} alt="siteLogo" />
         <p className="font-bold text-4xl">
@@ -13,10 +13,10 @@ const Footer = () => {
           [ Find Freelancer work from reputed companies easily ]
         </p>
       </aside>
-      <div className="flex gap-10">
+      <div className="mt-10 flex flex-col gap-10 justify-between">
         <div>
             <h1 className="-mt-8 text-2xl font-bold">Terms & Conditions</h1>
-            <ul>
+            <ul className="text-xl">
               <li>Market Laws</li>
               <li>International Laws</li>
               <li>Labour Laws</li>

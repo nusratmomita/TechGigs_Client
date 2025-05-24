@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ToastContainer, toast } from 'react-toastify';
 import { authContext } from "../../Root/Root";
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const Register = () => {
 
@@ -53,22 +55,6 @@ const Register = () => {
             })
             // console.log(user)
         })
-        // .then((result)=>{
-        //     const user = result.user;
-        //     // console.log(user)
-        //     updateUser({displayName:name , photoURL:photoURL})
-        //     .then(()=>{
-        //         setUser({...user, displayName:name , photoURL:photoURL})
-        //     })
-        //     toast.success("You have successfully created an account!")
-        //     setTimeout(()=>{
-        //         navigate('/')
-        //     },1500)
-        //     .catch(()=>{
-        //         toast.error("You have put invalid credentials")
-        //         setUser(user)
-        //     })
-        // })
         .catch(()=>{
             toast.error("You have put invalid credentials.")
         })
@@ -91,6 +77,7 @@ const Register = () => {
   return (
     <>
         <ToastContainer></ToastContainer>
+        <Header></Header>
         <div className="hero  min-h-screen">
             <div className="hero-content w-full rounded-3xl mt-20 p-25  flex-col justify-evenly lg:flex-row">
                 <div className="border-2 border-blue-600 p-2 rounded-2xl w-full max-w-lg shrink-0 shadow-2xl">
@@ -143,6 +130,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </>
   );
 };

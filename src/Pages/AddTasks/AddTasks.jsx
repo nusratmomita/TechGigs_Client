@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { authContext } from "../../Root/Root";
 import DatePicker from "react-datepicker";
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 import "react-datepicker/dist/react-datepicker.css";
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router';
@@ -55,7 +57,8 @@ const AddTasks = () => {
 
     return (
         <>
-            <ToastContainer></ToastContainer>        
+            <ToastContainer></ToastContainer> 
+            <Header></Header>       
             <div className="p-24">
             <div className="bg-purple-300 rounded-3xl p-12 text-center space-y-5">
                 <h1 className="text-5xl text-black">Add New Task</h1>
@@ -113,6 +116,7 @@ const AddTasks = () => {
                 </form>
             </div>
             </div>
+            <Footer></Footer>
         </>
     );
 };

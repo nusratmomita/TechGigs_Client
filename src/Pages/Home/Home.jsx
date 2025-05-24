@@ -1,23 +1,36 @@
 import Banner from '../../Components/Banner/Banner';
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 import TopFreelancers from '../../Components/TopFreelancers/TopFreelancers';
 import FreelancerEmployer from '../../Components/FreelancerEmployer/FreelancerEmployer';
 import FeaturedTasks from '../../Components/FeaturedTasks/FeaturedTasks';
 import { useLoaderData } from 'react-router';
+import { createContext, useState } from 'react';
+import './Home.css'
 
+export const ThemeContext = createContext('null')
 const Home = () => {
 
     const data = useLoaderData();
-    console.log(data)
+    // console.log(data)
 
-    
-    
+    const [theme , setTheme] = useState('dark')
+
+    const toggleTheme = () => {
+        setTheme((cur) => cur==="light" ? "dark" : "light")
+    }
+
     return (
-        <div>
-            <Banner></Banner>
-            <FeaturedTasks data={data}></FeaturedTasks>
-            <TopFreelancers></TopFreelancers>
-            <FreelancerEmployer></FreelancerEmployer>
-        </div>
+        <ThemeContext.Provider value={{theme , toggleTheme}}>
+            <div id={theme}>
+                <Header toggleTheme={toggleTheme} theme={theme}></Header>
+                <Banner></Banner>
+                <FeaturedTasks data={data}></FeaturedTasks>
+                <TopFreelancers></TopFreelancers>
+                <FreelancerEmployer></FreelancerEmployer>
+                <Footer></Footer>
+            </div>
+        </ThemeContext.Provider>
     );
 };
 

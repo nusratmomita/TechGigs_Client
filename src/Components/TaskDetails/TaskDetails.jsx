@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const TaskDetails = () => {
     const taskData = useLoaderData();
@@ -24,6 +26,7 @@ const TaskDetails = () => {
 
     return (
         <>
+            <Header></Header>
             <h1 className='text-center text-6xl font-extrabold mt-20 text-blue-400'>[ You bid for : {bidCount} opportunities. ]</h1>
             <div className='flex justify-center items-center mt-30 '>
                 <div className="card  bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 rounded-3xl shadow-md hover:shadow-2xl transition-transform transform hover:scale-90">
@@ -50,6 +53,7 @@ const TaskDetails = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </>
     );
 };

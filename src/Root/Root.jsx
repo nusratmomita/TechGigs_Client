@@ -1,7 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
-import Header from '../Components/Header/Header';
-import Footer from '../Components/Footer/Footer';
 import { auth } from '../Firebase/firebase.config';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
@@ -67,9 +65,7 @@ const Root = () => {
 
     return (
         <authContext.Provider value={handleForm}>
-             <Header></Header>
             <Outlet></Outlet>
-            <Footer></Footer>
         </authContext.Provider>
         
     );

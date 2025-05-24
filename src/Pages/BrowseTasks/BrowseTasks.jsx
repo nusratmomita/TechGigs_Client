@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink, useLoaderData } from 'react-router';
 import { MdWorkHistory } from "react-icons/md";
-
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const BrowseTasks = () => {
     const totalTasks = useLoaderData();
    
     return (
         <>
+            <Header></Header>
             <h1 className='text-center text-5xl font-bold mt-20 text-violet-900'>Currently total task(s) : {totalTasks.length}</h1>
-
             <div className='m-10 lg:m-30 grid justify-center items-center gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     totalTasks.map((task)=> 
@@ -40,6 +41,7 @@ const BrowseTasks = () => {
                     )
                 }
             </div>
+            <Footer></Footer>
         
         </>
     );

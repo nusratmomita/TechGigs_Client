@@ -1,0 +1,28 @@
+#light{
+    background-color: #fff;
+}
+
+
+#dark{
+    background-color: rgb(78, 78, 186);
+}
+
+#dark #header{
+    background-color: rgb(173, 146, 198);
+}
+
+#dark #featuredTasks{
+    background-color: rgb(173, 146, 198);
+}
+#dark #banner{
+    background-color: rgb(173, 146, 198);
+}
+#dark #numberSuccess{
+    background-color: rgb(173, 146, 198);
+}
+#dark #topFreelancers{
+    background-color: rgb(173, 146, 198);
+}
+#dark #footer{
+    background-color: blueviolet;
+}
