@@ -10,9 +10,6 @@ import ReactSwitch from 'react-switch';
 
 const Header = ({toggleTheme, theme}) => {
   const {user,handleLogout} = useContext(authContext);
-  // console.log(user.displayName)
-  // console.log(user.email)
-  // console.log(user.email)
 
   const links = (
     <>
@@ -42,19 +39,18 @@ const Header = ({toggleTheme, theme}) => {
             <img className="w-35 h-25" src={siteLogo} alt="siteLogo" />
             <h1 className="mt-10 -ml-5 text-4xl font-bold">Tech<span className="underline text-purple-700">Gigs</span></h1>
         </div>
-        <ul className="navLinks mt-5 text-xl font-bold flex gap-10">
+        <ul className="navLinks mt-5 text-xl font-bold flex gap-5 lg:whitespace-nowrap">
             {
                 links
             }
         </ul>
-        <div className="flex gap-4 flex-col lg:flex-row justify-center items-center">
-                
+        <div className="flex gap-4 flex-row lg:flex-row justify-center items-center">
           {
             user && user?.email ? 
             <div>
                 <button className="" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
                   {
-                    user?.photoURL ? <img className="w-20 h-20"src={user.photoURL} alt="userImg" /> :
+                    user?.photoURL ? <img className="lg:w-10 lg:h-10 lg:rounded-full mt-7"src={user.photoURL} alt="userImg" /> :
                     <img className="w-20 h-20" src={defaultUserImg} alt="userImg" />
                   }
                   </button>
@@ -106,7 +102,7 @@ const Header = ({toggleTheme, theme}) => {
             handleDiameter={30}
             height={40}
             width={90}
-            className="react-switch"
+            className="react-switch mt-6"
             />  
         </div>
     </div>
