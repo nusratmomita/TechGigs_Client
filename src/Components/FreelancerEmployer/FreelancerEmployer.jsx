@@ -4,8 +4,8 @@ import first from '../../assets/first.png'
 
 const FreelancerEmployer = () => {
     return (
-        <div className='mt-40'>
-            <h1 className="text-7xl text-center font-extrabold text-purple-400">| Success Well |</h1>
+        <div className='mt-20'>
+            <h1 className="text-7xl text-center font-extrabold text-blue-400">| Success Well |</h1>
             <div className='mt-20 flex flex-col lg:flex-row gap-20 justify-center items-center'>
                 {/* employers */}
                 <div id="numberSuccess" className='p-10 text-center bg-blue-200 border-2 border-blue-900 rounded-4xl'>

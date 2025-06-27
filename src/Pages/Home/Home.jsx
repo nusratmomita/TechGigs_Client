@@ -7,6 +7,7 @@ import FeaturedTasks from '../../Components/FeaturedTasks/FeaturedTasks';
 import { useLoaderData } from 'react-router';
 import { createContext, useState } from 'react';
 import './Home.css'
+import SuccessInNumbers from '../../Components/SuccessInNumbers/SuccessInNumbers';
 
 export const ThemeContext = createContext('null')
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
                 <FeaturedTasks data={data}></FeaturedTasks>
                 <TopFreelancers></TopFreelancers>
                 <FreelancerEmployer></FreelancerEmployer>
+                <SuccessInNumbers></SuccessInNumbers>
                 <Footer></Footer>
             </div>
         </ThemeContext.Provider>

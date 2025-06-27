@@ -4,7 +4,7 @@ import interiorDesigner from '../../assets/interiorDesigner.png'
 
 const TopFreelancers = () => {
   return (
-    <div className="mt-40">
+    <div className="mt-20">
       <h1 className="text-7xl text-center font-extrabold text-blue-400">
        | Meet Our Top 3 Freelancers of This Week |
       </h1>

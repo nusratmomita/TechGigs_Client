@@ -104,7 +104,7 @@ const Header = ({toggleTheme, theme}) => {
             height={40}
             width={90}
             className="react-switch mt-6"
-            />  
+          />  
         </div>
     </div>
       
