@@ -21,6 +21,7 @@ const Header = ({toggleTheme, theme}) => {
           My Posted Tasks
         </NavLink>
       </li>
+      <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
     </>
   );
 
@@ -34,10 +35,10 @@ const Header = ({toggleTheme, theme}) => {
 
   }
   return (
-    <div id="header" className="navbar bg-base-100 shadow-lg flex gap-10 lg:gap-70 text-center">
+    <div id="header" className="navbar bg-base-100 shadow-lg flex gap-10 lg:gap-70 text-center p-5 fixed top-0 z-10 ">
         <div className="hidden lg:flex gap-5">
             <img className="w-35 h-25" src={siteLogo} alt="siteLogo" />
-            <h1 className="mt-10 -ml-5 text-4xl font-bold">Tech<span className="underline text-purple-700">Gigs</span></h1>
+            <h1 className="mt-10 -ml-7 text-4xl font-bold">Tech<span className="underline text-purple-700">Gigs</span></h1>
         </div>
         <ul className="navLinks mt-5 text-xl font-bold flex gap-5 lg:whitespace-nowrap">
             {
