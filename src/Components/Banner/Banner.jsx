@@ -6,11 +6,11 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
   return (
-    <div id='banner' className="m-50 rounded-3xl h-[500px] flex items-center justify-center bg-[#E9A5F1]">
+    <div className="lg:m-50 m-20 rounded-3xl lg:h-[500px] flex items-center justify-center bg-[#E9A5F1]">
         <div className="carousel w-full max-w-7xl rounded-box">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className="m-20 flex flex-col lg:flex-row gap-30 justify-center items-center">
-                    <img src={digitalMarketing} className="bg-purple-100 p-10 w-full h-1/3 object-cover rounded-box" />
+                    <img src={digitalMarketing} className="bg-purple-100 p-10 w-full lg:h-1/3 object-cover rounded-box" />
                     <div>
                         <h1 className="text-3xl font-bold">
                             Hire A Digital Market {' '}

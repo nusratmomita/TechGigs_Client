@@ -1,10 +1,11 @@
 import React from "react";
 import siteLogo from "../../assets/SiteLogo.png";
 import { FiLinkedin } from "react-icons/fi";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#8F87F1] text-primary-content p-5">
+    <footer className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#afa9ef] text-black p-5">
       <aside>
         <img className="w-20 h-25 rounded-3xl" src={siteLogo} alt="siteLogo" />
         <p className="font-bold text-4xl">
@@ -15,12 +16,11 @@ const Footer = () => {
       </aside>
       <div className="mt-10 flex flex-col gap-10 justify-between">
         <div>
-            <h1 className="-mt-8 text-2xl font-bold">Terms & Conditions</h1>
+            <h1 className="-mt-8 text-2xl font-bold">Important Links</h1>
             <ul className="text-xl">
-              <li>Market Laws</li>
-              <li>International Laws</li>
-              <li>Labour Laws</li>
-              <li>Freelancing Laws</li>
+              <Link to='/'><li>Home</li></Link>
+              <Link to='/browseTasks'><li>Browse Tasks</li></Link>
+              <Link to='/addTasks'><li>Add Tasks</li></Link>
             </ul>
         </div>
         <div>

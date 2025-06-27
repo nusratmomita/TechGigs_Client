@@ -10,6 +10,7 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import UpdateTasks from "../Pages/UpdateTasks/UpdateTasks";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 
 export const router = createBrowserRouter([
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute>
                             <UpdateTasks></UpdateTasks>
                         </PrivateRoute>
+            },
+            {
+                path: "/dashboard",
+                Component: Dashboard
             },
             {
                 path: "/login",
