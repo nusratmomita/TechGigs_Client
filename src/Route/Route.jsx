@@ -54,11 +54,13 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://tech-gigs-server.vercel.app/tasks/${params.id}`),
                 element: <PrivateRoute>
                             <UpdateTasks></UpdateTasks>
-                        </PrivateRoute>
+                         </PrivateRoute>
             },
             {
                 path: "/dashboard",
-                Component: Dashboard
+                element:  <PrivateRoute>
+                            <Dashboard></Dashboard>
+                          </PrivateRoute>
             },
             {
                 path: "/login",

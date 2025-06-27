@@ -60,8 +60,8 @@ const AddTasks = () => {
             <ToastContainer></ToastContainer> 
             <Header></Header>       
             <div className="p-24">
-            <div className="bg-purple-300 rounded-3xl p-12 text-center space-y-5">
-                <h1 className="text-5xl text-black">Add New Task</h1>
+            <div className="mt-50 bg-purple-300 rounded-3xl p-12 text-center space-y-5">
+                <h1 className=" text-5xl text-black">Add New Task</h1>
                 <form onSubmit={handleAddTask}>
                     <div className="mt-15 grid grid-cols-1 md:grid-cols-2 gap-5">
                         <fieldset className="raleway-font fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
