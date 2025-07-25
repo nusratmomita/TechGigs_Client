@@ -49,17 +49,17 @@ const Header = ({toggleTheme, theme}) => {
           {
             user && user?.email ? 
             <div>
-                <button className="" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
-                  {
-                    user?.photoURL ? <img className="lg:w-10 lg:h-10 lg:rounded-full mt-7"src={user.photoURL} alt="userImg" /> :
+                {
+                  user?.photoURL ? 
+                  <div className="mt-5 flex flex-row-reverse justify-center items-center gap-4 lg:-ml-30">
+                    <button className="text-center flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3" onClick={handleSignOut} >Logout</button>
+                    <img className=" w-30 h-15 rounded-full"src={user.photoURL} alt="userImg" />
+                  </div>
+                  :
+                  <div>                      
                     <img className="w-20 h-20" src={defaultUserImg} alt="userImg" />
-                  }
-                  </button>
-                <ul className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
-                  popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
-                  <li className="text-2xl text-center font-black mb-5">Hi, {user?.displayName ? user?.displayName : "User"} </li>
-                  <li className="text-center"><button onClick={handleSignOut} className="flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3">Logout</button></li>
-                </ul>          
+                  </div>
+                }  
             </div> 
             : 
             <div className="mt-5 text-xl font-bold flex flex-col lg:flex-row gap-5">
