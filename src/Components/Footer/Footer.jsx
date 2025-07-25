@@ -5,33 +5,39 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="mt-60 rounded-2xl footer footer-horizontal footer-center bg-[#afa9ef] text-black p-5">
+    <footer className="border-2 border-gray-600 mt-60 rounded-2xl footer footer-horizontal bg-white text-black p-5">
       <aside>
         <img className="w-20 h-25 rounded-3xl" src={siteLogo} alt="siteLogo" />
         <p className="font-bold text-4xl">
           Tech<span className="underline text-purple-900">Gigs</span>
           <br />
-          [ Find Freelancer work from reputed companies easily ]
+          Find Freelancer work <br /> from reputed companies easily
         </p>
       </aside>
-      <div className="mt-10 flex flex-col gap-10 justify-between">
+
+      
+      <div className="mt-30">
         <div>
-            <h1 className="-mt-8 text-2xl font-bold">Important Links</h1>
-            <ul className="text-xl">
-              <Link to='/'><li>Home</li></Link>
-              <Link to='/browseTasks'><li>Browse Tasks</li></Link>
-              <Link to='/addTasks'><li>Add Tasks</li></Link>
-            </ul>
-        </div>
-        <div>
-            <h1 className="text-2xl font-bold">Contact Details</h1>
-            <div className="flex gap-4 text-xl font-sans">
-                <h2>Email: <a href="mailto:nusratmomita@gmail.com">Send Email</a></h2>
-                <h2>Mobile Number: 0171241600</h2>
-            </div>
+          <h1 className="-mt-8 text-2xl font-bold">Important Links</h1>
+          <ul className="text-xl">
+            <Link to='/'><li>Home</li></Link>
+            <Link to='/browseTasks'><li>Browse Tasks</li></Link>
+            <Link to='/addTasks'><li>Add Tasks</li></Link>
+          </ul>
         </div>
       </div>
-      <nav>
+      <div className="ml-30 mt-20 ">
+        <div className="flex flex-col gap-10 justify-between">
+          <div>
+              <h1 className="text-2xl font-bold">Contact Details</h1>
+              <div className="flex gap-4 text-xl font-sans">
+                  <h2>Email: <a href="mailto:nusratmomita@gmail.com">Send Email</a></h2>
+                  <h1> | </h1>
+                  <h2>Mobile Number: 0171241600</h2>
+              </div>
+          </div>
+        </div>
+        {/* <nav> */}
         <div className="grid grid-flow-col gap-4">
           <h1 className="text-xl font-mono">Connect With Us: </h1>
           <a target="_blank" href="https://x.com/NushrathH18021">
@@ -46,7 +52,7 @@ const Footer = () => {
             </svg>
           </a>
           <a target="_blank" href="https://www.linkedin.com/in/nushrathmomita/">
-           <FiLinkedin size={25}></FiLinkedin>
+          <FiLinkedin size={25}></FiLinkedin>
           </a>
           <a target="_blank" href="https://www.facebook.com/nushrathmomita/">
             <svg
@@ -60,7 +66,8 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-      </nav>
+        {/* </nav> */}
+      </div>
     </footer>
   );
 };
