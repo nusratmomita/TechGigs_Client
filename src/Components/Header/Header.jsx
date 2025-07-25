@@ -52,7 +52,7 @@ const Header = ({toggleTheme, theme}) => {
                 {
                   user?.photoURL ? 
                   <div className="mt-5 flex flex-row-reverse justify-center items-center gap-4 lg:-ml-30">
-                    <button className="text-center flex justify-center items-center border-2 border-amber-900 text-2xl cursor-pointer bg-red-100 text-red-900 rounded-2xl p-3" onClick={handleSignOut} >Logout</button>
+                    <button className="text-center flex justify-center items-center border-2 border-purple-900 text-2xl cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3" onClick={handleSignOut} >Logout</button>
                     <img className=" w-30 h-15 rounded-full"src={user.photoURL} alt="userImg" />
                   </div>
                   :
