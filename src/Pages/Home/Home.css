@@ -2,7 +2,6 @@
     background-color: #fff;
 }
 
-
 #dark{
     background-color: rgb(78, 78, 186);
 }
@@ -15,7 +14,8 @@
     background-color: rgb(173, 146, 198);
 }
 #dark #banner{
-    background-color: rgb(173, 146, 198);
+    background-color: rgb(131, 0, 254);
+    margin-top: 120px;
 }
 #dark #numberSuccess{
     background-color: rgb(173, 146, 198);

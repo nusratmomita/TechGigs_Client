@@ -53,7 +53,7 @@ const Header = ({toggleTheme, theme}) => {
                   user?.photoURL ? 
                   <div className="mt-5 flex flex-row-reverse justify-center items-center gap-4 lg:-ml-30">
                     <button className="text-center flex justify-center items-center border-2 border-purple-900 text-2xl cursor-pointer bg-purple-100 text-purple-900 rounded-2xl p-3" onClick={handleSignOut} >Logout</button>
-                    <img className=" w-30 h-15 rounded-full"src={user.photoURL} alt="userImg" />
+                    <img className=" w-20 h-15 rounded-full"src={user.photoURL} alt="userImg" />
                   </div>
                   :
                   <div>                      
@@ -67,7 +67,7 @@ const Header = ({toggleTheme, theme}) => {
               <NavLink to='/register'><button className="cursor-pointer bg-purple-900 text-white rounded-2xl p-3">Register</button></NavLink>
             </div>
           }
-          <ReactSwitch
+          {/* <ReactSwitch
             onChange={toggleTheme}
             checked={theme === "dark"}
             checkedIcon={
@@ -104,7 +104,7 @@ const Header = ({toggleTheme, theme}) => {
             height={40}
             width={90}
             className="react-switch mt-6"
-          />  
+          />   */}
         </div>
     </div>
       
